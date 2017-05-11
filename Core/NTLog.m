@@ -125,6 +125,9 @@ void NTLogOutputv(NSString *filename, int lineNum, NTLogEntryType logEntryType, 
             if ( [listener respondsToSelector:@selector(writeType:thread:location:message:)] )
                 [listener writeType:logEntryType thread:threadName location:location message:user_message];
             
+            if ( [listener respondsToSelector:@selector(writeLine:type:)] )
+                [listener writeLine:message type:logEntryType];
+            
             if ( [listener respondsToSelector:@selector(writeLine:)] )
                 [listener writeLine:message];
         }

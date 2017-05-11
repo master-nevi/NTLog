@@ -27,6 +27,7 @@ typedef NS_OPTIONS(NSInteger, NTLogEntryType)
 // one of the following must be implemented...
 
 -(void)writeLine:(NSString *)line;
+-(void)writeLine:(NSString *)line type:(NTLogEntryType)type;
 -(void)writeType:(NTLogEntryType)type thread:(NSString *)thread location:(NSString *)location message:(NSString *)message;
 
 @end
